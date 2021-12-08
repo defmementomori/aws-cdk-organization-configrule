@@ -8,8 +8,8 @@ type ConfigRuleType = {
 
 export interface AwsCdkOrganizationConfigruleProps {
   configRulesAll: ConfigRuleType[];
-  configRulesOnlyUsEast1: ConfigRuleType[];
-  configExcludedAccounts: string[];
+  configRulesOnlyUsEast1?: ConfigRuleType[];
+  configExcludedAccounts?: string[];
 }
 
 export class AwsCdkOrganizationConfigrule extends Construct {
@@ -25,7 +25,7 @@ export class AwsCdkOrganizationConfigrule extends Construct {
     const region = process.env.region;
     const rules =
       region == "us-east-1"
-        ? configRulesAll.concat(configRulesOnlyUsEast1)
+        ? configRulesAll.concat(configRulesOnlyUsEast1 || [])
         : configRulesAll;
 
     rules.map((rule) => {

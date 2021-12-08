@@ -3,7 +3,7 @@
 ## How to use
 
 ```
-import { AwsCdkOrganizationConfigrule } from '@defmementomori/aws-cdk-organization-configrule';
+import { AwsCdkOrganizationConfigrule } from 'aws-cdk-organization-configrule';
 
 // example
 new AwsCdkOrganizationConfigrule(this, 'OrgConfig',{
